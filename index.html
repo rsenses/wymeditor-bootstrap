@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="wymeditor/skins/bootstrap/skin.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <h1>WYMeditor: Plugins</h1>
+    <p><a href="http://www.wymeditor.org/">WYMeditor</a> is a web-based XHTML WYSIWYM editor.</p>
+    <p>Hover over toolbar items to see their labels in the lower left.</p>
+    <form method="post" action="">
+        <textarea class="wymeditor form-control"></textarea>
+        <button type="submit" class="btn btn-success">Save</button>
+    </form>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="wymeditor/jquery.wymeditor.js"></script>
+
+    <!-- Load the hovertools plugin-->
+    <script type="text/javascript" src="wymeditor/plugins/fullscreen/jquery.wymeditor.fullscreen.js"></script>
+    <script type="text/javascript" src="wymeditor/plugins/hovertools/jquery.wymeditor.hovertools.js"></script>
+    <script type="text/javascript" src="wymeditor/plugins/image_upload/jquery.wymeditor.image_upload.js"></script>
+    <script type="text/javascript" src="wymeditor/plugins/alignment/jquery.wymeditor.alignment.js"></script>
+    <script type="text/javascript" src="wymeditor/plugins/bootstrap/jquery.wymeditor.bootstrap.js"></script>
+    <script type="text/javascript" src="wymeditor/skins/bootstrap/skin.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+    // Use the 'postInit' option to initialize the plugin
+    // once WYMeditor is ready.,
+    $(function() {
+        var options = {
+            skin: 'bootstrap',
+            html: '<p>Hello, World!<\/p>',
+            dialogImageUploadUrl: 'wymeditor/plugins/image_upload/image_upload.php',
+            iframeBasePath: 'wymeditor/iframe/bootstrap/',
+            lang: 'es',
+            // Classes panel
+            classesItems: [
+                {'name': 'text-muted', 'title': 'Text muted', 'expr': 'p'},
+                {'name': 'text-primary', 'title': 'Text primary', 'expr': 'p'},
+                {'name': 'text-success', 'title': 'Text success', 'expr': 'p'},
+                {'name': 'text-info', 'title': 'Text info', 'expr': 'p'},
+                {'name': 'text-warning', 'title': 'Text warning', 'expr': 'p'},
+                {'name': 'text-danger', 'title': 'Text danger', 'expr': 'p'},
+                {'name': 'bg-primary', 'title': 'Bg primary', 'expr': 'p, div'},
+                {'name': 'bg-success', 'title': 'Bg success', 'expr': 'p, div'},
+                {'name': 'bg-info', 'title': 'Bg info', 'expr': 'p, div'},
+                {'name': 'bg-warning', 'title': 'Bg warning', 'expr': 'p, div'},
+                {'name': 'bg-danger', 'title': 'Bg danger', 'expr': 'p, div'},
+                {'name': 'pull-left', 'title': 'Float left', 'expr': 'img'},
+                {'name': 'pull-right', 'title': 'Float right', 'expr': 'img'},
+                {'name': 'img-rounded', 'title': 'Img rounded', 'expr': 'img'},
+                {'name': 'img-circle', 'title': 'Img circle', 'expr': 'img'},
+                {'name': 'img-thumbnail', 'title': 'Img thumbnail', 'expr': 'img'},
+                {'name': 'btn btn-default', 'title': 'Btn defautl', 'expr': 'a'},
+                {'name': 'btn btn-primary', 'title': 'Btn primary', 'expr': 'a'},
+                {'name': 'btn btn-success', 'title': 'Btn success', 'expr': 'a'},
+                {'name': 'btn btn-info', 'title': 'Btn info', 'expr': 'a'},
+                {'name': 'btn btn-warning', 'title': 'Btn warning', 'expr': 'a'},
+                {'name': 'btn btn-danger', 'title': 'Btn danger', 'expr': 'a'},
+                {'name': 'btn btn-link', 'title': 'Btn link', 'expr': 'a'},
+            ],
+            // We customize the XHTML structure of WYMeditor by overwriting
+            // the value of boxHtml. In this example, "CONTAINERS" and
+            // "CLASSES" have been moved from "wym_area_right" to "wym_area_top":
+            boxHtml:   "<div class='wym_box'>" +
+                "<div class='wym_area_top'>" +
+                WYMeditor.TOOLS +
+                WYMeditor.CONTAINERS +
+                WYMeditor.CLASSES +
+                "</div>" +
+                "<div class='wym_area_left'></div>" +
+                "<div class='wym_area_right'></div>" +
+                "<div class='wym_area_main'>" +
+                WYMeditor.HTML +
+                WYMeditor.IFRAME +
+                WYMeditor.STATUS +
+                "</div>" +
+                "<div class='wym_area_bottom'></div>" +
+                "</div>",
+            postInit: function(wym) {
+                // postInit is executed after WYMeditor initialization
+                // 'wym' is the current WYMeditor instance
+
+                // Let's activate the 'hovertools' plugin
+                // to provide advanced feedback to our users.
+                wym.hovertools();
+                wym.fullscreen();
+                wym.alignment();
+                wym.bootstrap();
+                wym.image_upload();
+            }
+        };
+        $('.wymeditor').wymeditor(options);
+    });
+    </script>
+</body>
+
+</html>

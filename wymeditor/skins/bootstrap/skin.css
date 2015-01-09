@@ -1,0 +1,328 @@
+/*
+ * WYMeditor : what you see is What You Mean web-based editor
+ * Copyright (c) 2005 - 2009 Jean-Francois Hovinne, http://www.wymeditor.org/
+ * Dual licensed under the MIT (MIT-license.txt)
+ * and GPL (GPL-license.txt) licenses.
+ *
+ * For further information visit:
+ *      http://www.wymeditor.org/
+ *
+ * File Name:
+ *      skin.css
+ *      main stylesheet for the default WYMeditor skin
+ *      See the documentation for more info.
+ *
+ * File Authors:
+ *      Daniel Reszka (d.reszka a-t wymeditor dotorg)
+*/
+/*TRYING TO RESET STYLES THAT MAY INTERFERE WITH WYMEDITOR*/
+
+.wym_skin_bootstrap p, .wym_skin_bootstrap h2, .wym_skin_bootstrap h3, .wym_skin_bootstrap ul, .wym_skin_bootstrap li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-width: 0;
+    background: transparent url();
+}
+/*HIDDEN BY DEFAULT*/
+
+.wym_skin_bootstrap .wym_area_left {
+    display: none;
+}
+.wym_skin_bootstrap .wym_area_right {
+    display: block;
+}
+/*WYM_BOX*/
+
+.wym_skin_bootstrap {
+    padding: 5px;
+    border-radius: 5px;
+    background: #f2f2f2;
+}
+/*auto-clear the wym_box*/
+
+.wym_skin_bootstrap:after {
+    display: block;
+    visibility: hidden;
+    clear: both;
+    height: 0;
+    content: '.';
+}
+* html .wym_skin_bootstrap {
+    height: 1%;
+}
+/*WYM_HTML*/
+
+.wym_skin_bootstrap .wym_html {
+    width: 98%;
+}
+.wym_skin_bootstrap .wym_html textarea {
+    width: 100%;
+    height: 200px;
+    border: 1px solid gray;
+    background: white;
+}
+/*WYM_IFRAME*/
+
+.wym_skin_bootstrap .wym_iframe {
+    width: 98%;
+}
+.wym_skin_bootstrap .wym_iframe iframe {
+    width: 100%;
+    height: 200px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: white;
+}
+/*AREAS*/
+
+.wym_skin_bootstrap .wym_area_bottom {
+    clear: both;
+    height: 1%;
+}
+* html .wym_skin_bootstrap .wym_area_main {
+    height: 1%;
+}
+* html .wym_skin_bootstrap .wym_area_top {
+    height: 1%;
+}
+* + html .wym_skin_bootstrap .wym_area_top {
+    height: 1%;
+}
+/*SECTIONS SYSTEM*/
+/*common defaults for all sections*/
+
+.wym_skin_bootstrap .wym_section {
+    margin-bottom: 5px;
+}
+.wym_skin_bootstrap .wym_section h2, .wym_skin_bootstrap .wym_section h3 {
+    margin: 0;
+    padding: 1px 3px;
+}
+.wym_skin_bootstrap .wym_section a {
+    display: block;
+    padding: 0 3px;
+    text-decoration: none;
+    color: black;
+}
+.wym_skin_bootstrap .wym_section a:hover:before {
+    color: #000;
+}
+.wym_skin_bootstrap .wym_section a {
+    padding: 3px 20px;
+    color: #333;
+}
+/*hide section titles by default*/
+
+.wym_skin_bootstrap .wym_section h2 {
+    display: none;
+}
+/*disable any margin-collapse*/
+
+.wym_skin_bootstrap .wym_section {
+    display: inline-block;
+    float: left;
+    margin-right: 10px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+.wym_skin_bootstrap .wym_buttons {
+    padding-top: 8px;
+}
+/*auto-clear sections*/
+
+.wym_skin_bootstrap .wym_section ul:after {
+    display: block;
+    visibility: hidden;
+    clear: both;
+    height: 0;
+    content: '.';
+}
+* html .wym_skin_bootstrap .wym_section ul {
+    height: 1%;
+}
+/*option: add this class to a section to make it render as a panel*/
+
+.wym_skin_bootstrap .wym_panel h2 {
+    display: none;
+}
+.wym_skin_bootstrap .dropdown ul, .wym_skin_bootstrap .dropdown li {
+    margin: inherit;
+    padding: inherit;
+    background-color: #fff;
+}
+/*option: add this class to a section to make its elements render buttons (icons are only available for the wym_tools section for now)*/
+
+.wym_skin_bootstrap .wym_buttons li {
+    float: left;
+}
+.wym_skin_bootstrap .wym_buttons a {
+    overflow: hidden;
+    width: 20px;
+    height: 20px;
+    padding: 2px;
+}
+/*image replacements*/
+
+.wym_skin_bootstrap .wym_buttons li a {
+    position: relative;
+    color: transparent;
+}
+.wym_skin_bootstrap .wym_buttons li a:before {
+    font-family: FontAwesome;
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-right: .5em;
+    text-decoration: inherit;
+    /*--adjust as necessary--*/
+
+    color: #555;
+}
+.wym_skin_bootstrap .wym_buttons li.wym_tools_strong a:before {
+    content: '\f032';
+}
+.wym_skin_bootstrap .wym_buttons li.wym_tools_emphasis a:before {
+    content: '\f033';
+}
+.wym_skin_bootstrap .wym_buttons li.wym_tools_superscript a:before {
+    content: '\f12b';
+}
+.wym_skin_bootstrap .wym_buttons li.wym_tools_subscript a:before {
+    content: '\f12c';
+}
+.wym_skin_bootstrap .wym_buttons li.wym_tools_ordered_list a:before {
+    content: '\f0cb';
+}
+.wym_skin_bootstrap .wym_buttons li.wym_tools_unordered_list a:before {
+    content: '\f0ca';
+}
+.wym_skin_bootstrap .wym_buttons li.wym_tools_indent a:before {
+    content: '\f03c';
+}
+.wym_skin_bootstrap .wym_buttons li.wym_tools_outdent a:before {
+    content: '\f03b';
+}
+.wym_skin_bootstrap .wym_buttons li.wym_tools_undo a:before {
+    content: '\f0e2';
+}
+.wym_skin_bootstrap .wym_buttons li.wym_tools_redo a:before {
+    content: '\f01e';
+}
+.wym_skin_bootstrap .wym_buttons li.wym_tools_link a:before {
+    content: '\f0c1';
+}
+.wym_skin_bootstrap .wym_buttons li.wym_tools_unlink a:before {
+    content: '\f127';
+}
+.wym_skin_bootstrap .wym_buttons li.wym_tools_image a:before {
+    content: '\f03e';
+}
+.wym_skin_bootstrap .wym_buttons li.wym_tools_table a:before {
+    content: '\f0ce';
+}
+.wym_skin_bootstrap .wym_buttons li.wym_tools_paste a:before {
+    content: '\f0ea';
+}
+.wym_skin_bootstrap .wym_buttons li.wym_tools_html a:before {
+    content: '\f121';
+}
+.wym_skin_bootstrap .wym_buttons li.wym_tools_preview a:before {
+    content: '\f06e';
+}
+.wym_skin_bootstrap .wym_buttons li.wym_tools_alignment_left a {
+    background: transparent !important;
+}
+.wym_skin_bootstrap .wym_buttons li.wym_tools_alignment_left a:before {
+    content: '\f036';
+}
+.wym_skin_bootstrap .wym_buttons li.wym_tools_alignment_center a {
+    background: transparent !important;
+}
+.wym_skin_bootstrap .wym_buttons li.wym_tools_alignment_center a:before {
+    content: '\f037';
+}
+.wym_skin_bootstrap .wym_buttons li.wym_tools_alignment_right a {
+    background: transparent !important;
+}
+.wym_skin_bootstrap .wym_buttons li.wym_tools_alignment_right a:before {
+    content: '\f038';
+}
+.wym_skin_bootstrap .wym_buttons li.wym_tools_alignment_justify a {
+    background: transparent !important;
+}
+.wym_skin_bootstrap .wym_buttons li.wym_tools_alignment_justify a:before {
+    content: '\f039';
+}
+.wym_skin_bootstrap .wym_buttons li.wym_tools_fullscreen a {
+    background: transparent !important;
+}
+.wym_skin_bootstrap .wym_buttons li.wym_tools_fullscreen a:before {
+    content: '\f0b2';
+}
+/*DECORATION*/
+
+.wym_skin_bootstrap .wym_section h2 {
+    border: solid gray;
+    border-width: 0 0 1px;
+    background: #ddd;
+}
+.wym_skin_bootstrap .wym_section h2 span {
+    color: gray;
+}
+.wym_skin_bootstrap .wym_panel {
+    padding: 0;
+    border: solid gray;
+    border-width: 1px;
+    background: white;
+}
+.wym_skin_bootstrap .wym_panel ul {
+    margin: 2px 0 5px;
+}
+/*DIALOGS*/
+
+.wym_dialog div.row {
+    margin-bottom: 5px;
+}
+.wym_dialog div.row input {
+    margin-right: 5px;
+}
+.wym_dialog div.row label {
+    display: block;
+    float: left;
+    width: 120px;
+    margin-right: 10px;
+    text-align: right;
+}
+.wym_dialog div.row-indent {
+    padding-left: 160px;
+}
+/*autoclearing*/
+
+.wym_dialog div.row:after {
+    display: block;
+    visibility: hidden;
+    clear: both;
+    height: 0;
+    content: '.';
+}
+.wym_dialog div.row {
+    display: inline-block;
+}
+/* Hides from IE-mac \*/
+
+* html .wym_dialog div.row {
+    height: 1%;
+}
+.wym_dialog div.row {
+    display: block;
+}
+/* End hide from IE-mac */
+/*WYMEDITOR_LINK*/
+
+.wym_wymeditor_link {
+    display: none;
+}
